@@ -12,7 +12,7 @@ app.get("/pokemon", (req, res) => {
     res.render('Index', {pokemons:pokemon});
   });
 app.get("/pokemon/:id", (req, res) => {
-    res.render('Show', {pokemons:pokemon[req.params.id]})
+    res.send(req.params.id)
 })
 
 app.set("view engine", "jsx");
