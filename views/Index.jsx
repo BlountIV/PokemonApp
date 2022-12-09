@@ -7,9 +7,15 @@ const myStyle = {
 
 class MyFirstComponent extends React.Component {
     render() {
+        const { pokemons } = this.props
         return (
             <div>
-                <h1>See All The Pokemon!</h1>
+                <h1>Pokemon found while on a Adventure!</h1>
+                <ul>
+                    {pokemons.map((pokemon, i) => {
+                        return <li><a href={`/pokemon/${i}`}>{pokemon.name[0].toUpperCase(0) + pokemon.name.slice(1)}</a></li>
+                    })}
+                </ul>
             </div>
         )
     }

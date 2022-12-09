@@ -9,10 +9,10 @@ app.get("/", (req, res) => {
     res.send('Welcome to the Pokemon App!');
   });
 app.get("/pokemon", (req, res) => {
-    res.render('Index', {pokemon:pokemon});
+    res.render('Index', {pokemons:pokemon});
   });
 app.get("/pokemon/:id", (req, res) => {
-    res.render('Show', {pokemon:pokemon[req.params.id]})
+    res.render('Show', {pokemons:pokemon[req.params.id]})
 })
 
 app.set("view engine", "jsx");
