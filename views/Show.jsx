@@ -1,20 +1,17 @@
 const React = require('react')
 
-const myStyle = {
-    color: '#ffffff',
-    backgroundColor: '#000000',
-};
-
 class Show extends React.Component {
     render() {
         const { pokemon } = this.props
-        return (
+        console.log(this.props)
+        return(
+
             <div>
-                <h1 style={myStyle}> Gotta Catch 'Em All </h1>
+                <link rel="stylesheet" type="text/css" href="../css/style.css" />
+                <h1> Gotta Find 'Em All </h1>
                 <h2>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
                 <img src={'http://img.pokemondb.net/artwork/' + pokemon.name.toLowerCase() + ".jpg"} ></img>
-                <br />
-                <a href="/pokemon">Back to Pokedex</a>
+                <a href='/pokemon/new'>Find a New Pokemon</a> | <a href="/pokemon">Back to Found Pokemon</a>
             </div>
         )
     }
